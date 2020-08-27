@@ -2,3 +2,4 @@
 .adminbro
 node_modules
 .env
+config
