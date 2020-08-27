@@ -10,10 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       phone: DataTypes.STRING,
-      organization: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
+      organization: DataTypes.STRING,
       notes: DataTypes.STRING,
     },
     {}
