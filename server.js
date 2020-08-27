@@ -1,15 +1,29 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const helmet = require("helmet");
+const compression = require("compression");
+const rateLimit = require("express-rate-limit");
+const { body, check } = require("express-validator");
+
 const apiBooks = require("./routes/books");
 const { adminPanelRouter, adminBro } = require("./routes/admin");
 
 const app = express();
 
-const corsOptions = {
-  origin: "http://localhost:4001",
-};
-app.use(cors(corsOptions));
+// const isProduction = process.env.NODE_ENV === "production";
+// const origin = {
+//   origin: isProduction ? "https://www.example.com" : "*",
+// };
+// app.use(cors(origin));
+app.use(compression());
+app.use(helmet());
+
+const limiter = rateLimit({
+  windowMs: 1 * 60 * 1000, // 1 minute
+  max: 5, // 5 requests,
+});
+app.use(limiter);
 
 app.use(adminBro.options.rootPath, adminPanelRouter);
 
