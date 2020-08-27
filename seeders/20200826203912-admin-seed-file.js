@@ -2,20 +2,20 @@
 const bcrypt = require("bcrypt");
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    const testUsers = [];
+  up: async (queryInterface, Sequelize) => {
+    const adminUsers = [];
 
-    testUsers.push({
+    adminUsers.push({
       name: "admin",
       email: "admin@admin.com",
       encryptedPassword: bcrypt.hashSync("password", 10),
       createdAt: new Date(),
       updatedAt: new Date(),
     });
-    return queryInterface.bulkInsert("Admins", testUsers, {});
+    return queryInterface.bulkInsert("Admins", adminUsers, {});
   },
 
-  down: (queryInterface, Sequelize) => {
+  down: async (queryInterface, Sequelize) => {
     return queryInterface.bulkDelete("Admins", null, {});
   },
 };
