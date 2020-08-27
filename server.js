@@ -14,11 +14,11 @@ const app = express();
 app.use(compression());
 app.use(helmet());
 
-const limiter = rateLimit({
-  windowMs: 1 * 60 * 1000, // 1 minute
-  max: 5, // 5 requests,
-});
-app.use(limiter);
+// const limiter = rateLimit({
+//   windowMs: 1 * 60 * 1000, // 1 minute
+//   max: 5, // 5 requests,
+// });
+// app.use(limiter);
 
 app.use(adminBro.options.rootPath, adminPanelRouter);
 
