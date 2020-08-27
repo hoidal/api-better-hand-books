@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "sequelize": "cross-env NODE_PATH=. sequelize",
+    "create": "npx sequelize-cli db:migrate",
+    "seed": "npx sequelize-cli db:seed:all",
+    "migrate": "npx sequelize-cli db:migrate",
     "dev": "cross-env NODE_PATH=. NODE_ENV=development nodemon",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
