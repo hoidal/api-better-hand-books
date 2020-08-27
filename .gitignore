@@ -2,4 +2,4 @@
 .adminbro
 /node_modules
 /*.env
-config
+.eslintrc.js
