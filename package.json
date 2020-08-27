@@ -4,10 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "create": "npx sequelize-cli db:migrate",
-    "seed": "npx sequelize-cli db:seed:all",
-    "migrate": "npx sequelize-cli db:migrate",
-    "dev": "cross-env NODE_PATH=. NODE_ENV=development nodemon",
+    "sequelize": "cross-env NODE_PATH=. sequelize",
+    "dev": "cross-env NODE_PATH=. NODE_ENV=development nodemon server.js",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,7 +23,7 @@
     "sequelize-cli": "^6.2.0"
   },
   "dependencies": {
-    "admin-bro": "^3.0.1",
+    "admin-bro": "^3.1.2",
     "admin-bro-expressjs": "^2.1.1",
     "admin-bro-sequelizejs": "^0.5.1",
     "bcrypt": "^5.0.0",
