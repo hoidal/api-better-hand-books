@@ -1,5 +1,5 @@
   
-.adminbro
+# .adminbro
 node_modules
-.env
-config
+# .env
+#config
