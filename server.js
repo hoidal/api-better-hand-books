@@ -6,10 +6,10 @@ const apiBooks = require("./routes/books");
 const { adminPanelRouter, adminBro } = require("./routes/admin");
 
 const app = express();
-app.use(cors());
 
 app.use(adminBro.options.rootPath, adminPanelRouter);
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
