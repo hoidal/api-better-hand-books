@@ -1,4 +1,6 @@
-"use strict";
+const { DataTypes } = require("sequelize");
+
+("use strict");
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable("Books", {
@@ -8,14 +10,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
+      hasDetails: {
+        type: Sequelize.BOOLEAN,
+      },
       title: {
         type: Sequelize.STRING,
       },
       author: {
-        type: Sequelize.STRING,
-      },
-      genre: {
-        type: Sequelize.STRING,
+        type: Sequelize.ARRAY(DataTypes.TEXT),
       },
       isbn: {
         type: Sequelize.STRING,
@@ -30,6 +32,30 @@ module.exports = {
         type: Sequelize.DATE,
       },
       notes: {
+        type: Sequelize.STRING,
+      },
+      language: {
+        type: Sequelize.STRING,
+      },
+      description: {
+        type: Sequelize.TEXT,
+      },
+      categories: {
+        type: Sequelize.ARRAY(DataTypes.TEXT),
+      },
+      pageCount: {
+        type: Sequelize.INTEGER,
+      },
+      imageUrl: {
+        type: Sequelize.STRING,
+      },
+      maturityRating: {
+        type: Sequelize.STRING,
+      },
+      publishedDate: {
+        type: Sequelize.STRING,
+      },
+      publisher: {
         type: Sequelize.STRING,
       },
       donor_id: {

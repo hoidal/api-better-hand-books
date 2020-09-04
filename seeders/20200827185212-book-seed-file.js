@@ -6,8 +6,7 @@ module.exports = {
 
     testBooks.push({
       title: "The Alchemist",
-      author: "Paolo Coehlo",
-      genre: null,
+      author: ["Paolo Coehlo"],
       isbn: "0-06-250218-2",
       condition: "Good",
       dateReceived: new Date(),

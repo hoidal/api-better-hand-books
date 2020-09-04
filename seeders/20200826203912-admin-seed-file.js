@@ -8,7 +8,7 @@ module.exports = {
     adminUsers.push({
       name: "admin",
       email: "admin@admin.com",
-      encryptedPassword: bcrypt.hashSync("password", 10),
+      encryptedPassword: await bcrypt.hash("password", 10),
       createdAt: new Date(),
       updatedAt: new Date(),
     });
