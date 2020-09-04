@@ -17,7 +17,7 @@ const fetchDetails = async (formattedIsbn) => {
         hasDetails: true,
         isbn: formattedIsbn,
         title: bookData.title,
-        authors: bookData.authors,
+        author: bookData.authors,
         pageCount: bookData.pageCount,
         language: bookData.language,
         categories: bookData.categories,
