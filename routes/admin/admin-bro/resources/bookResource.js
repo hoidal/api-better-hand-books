@@ -22,7 +22,7 @@ const fetchDetails = async (formattedIsbn) => {
         language: bookData.language,
         categories: bookData.categories,
         description: bookData.description,
-        imageUrl: bookData.imageLinks.thumbnail,
+        imageUrl: "https" + bookData.imageLinks.thumbnail.slice(4),
         maturityRating: bookData.maturityRating,
         publishedDate: bookData.publishedDate,
         publisher: bookData.publisher,
