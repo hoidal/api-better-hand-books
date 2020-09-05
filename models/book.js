@@ -3,13 +3,13 @@ module.exports = (sequelize, DataTypes) => {
   const Book = sequelize.define(
     "Book",
     {
-      title: {
+      title: DataTypes.String,
+      hasDetails: DataTypes.BOOLEAN,
+      author: DataTypes.ARRAY(DataTypes.TEXT),
+      isbn: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      hasDetails: DataTypes.BOOLEAN,
-      author: DataTypes.ARRAY(DataTypes.TEXT),
-      isbn: DataTypes.STRING,
       condition: DataTypes.STRING,
       dateReceived: DataTypes.DATE,
       dateDonated: DataTypes.DATE,
