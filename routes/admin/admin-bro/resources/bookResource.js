@@ -12,7 +12,7 @@ const fetchDetails = async (formattedIsbn) => {
           : current;
       });
       const bookData = mostPopular.volumeInfo;
-      console.log(bookData);
+
       const bookObj = {
         hasDetails: true,
         isbn: formattedIsbn,
@@ -22,7 +22,10 @@ const fetchDetails = async (formattedIsbn) => {
         language: bookData.language,
         categories: bookData.categories,
         description: bookData.description,
-        imageUrl: "https" + bookData.imageLinks.thumbnail.slice(4),
+        imageUrl:
+          bookData.imageLinks.thumbnail[4] === "s"
+            ? bookData.imageLinks.thumbnail
+            : "https" + bookData.imageLinks.thumbnail.slice(4),
         maturityRating: bookData.maturityRating,
         publishedDate: bookData.publishedDate,
         publisher: bookData.publisher,
